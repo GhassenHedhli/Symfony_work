@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<table class="table">
+    <thead>
+        <tr>
+
+            <th scope="col">Libelle</th>
+            <th scope="col">Image</th>
+
+            <th scope="col">Prix-Unitaire</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for product in products%}
+        <tr>
+            <td scope="row"></td>
+            <td>{{product.libelle}}</td>
+            <td>{{product.image}}</td>
+
+            <td>{{product.prix}}</td>
+            <td><a href="{{path('detail',{'id':product.id})}}" class="btn btn-primary">detail</a></td>
+
+        </tr>
+
+        {%endfor%}
+    </tbody>
+</table>
+{% endblock %}
